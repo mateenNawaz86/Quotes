@@ -1,6 +1,7 @@
 import React from "react";
 import Welcome from "./components/pages/Welcome";
 import Products from "./components/pages/Products";
+import ProductDetail from "./components/pages/ProductDetail";
 
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
@@ -13,6 +14,11 @@ const App = () => {
         <Routes>
           <Route exact path="/welcome" element={<Welcome />} />
           <Route exact path="/products" element={<Products />} />
+          <Route
+            exact
+            path="/product-detail/:productId"
+            element={<ProductDetail />}
+          />
         </Routes>
       </main>
     </>

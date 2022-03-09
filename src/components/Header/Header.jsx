@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg fixed-top shadow navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg shadow navbar-dark bg-dark">
         <div className="container-fluid">
           <Link className="navbar-brand text-primary" to="/">
             Quotes
