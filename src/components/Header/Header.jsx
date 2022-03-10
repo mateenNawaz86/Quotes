@@ -19,7 +19,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg shadow navbar-dark bg-dark">
         <div className="container-fluid">
           <Link className="navbar-brand text-primary" to="/">
-            Quotes
+            MTQ's
           </Link>
           <button
             className="navbar-toggler"
@@ -40,23 +40,23 @@ const Header = () => {
               <li className="nav-item">
                 <Link
                   aria-current="page"
-                  to="/welcome"
+                  to="/add-quotes"
                   className={`nav-link ${
-                    location.pathname === "/welcome" ? "active" : ""
+                    location.pathname === "/add-quotes" ? "active" : ""
                   }`}
                 >
-                  Welcome
+                  New Quote
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
                   aria-current="page"
-                  to="/products"
+                  to="/all-quotes"
                   className={`nav-link ${
-                    location.pathname === "/products" ? "active" : ""
+                    location.pathname === "/all-quotes" ? "active" : ""
                   }`}
                 >
-                  Products
+                  All Quotes
                 </Link>
               </li>
             </ul>
