@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { showMenu: false };
+const initialState = { showMenu: false, isAddingComment: false };
 
 const uiSlice = createSlice({
   name: "ui",
@@ -8,6 +8,10 @@ const uiSlice = createSlice({
   reducers: {
     toggleMenu(state) {
       state.showMenu = !state.showMenu;
+    },
+
+    addComment(state) {
+      state.isAddingComment = !state.isAddingComment;
     },
   },
 });

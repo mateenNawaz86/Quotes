@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import { useParams } from "react-router-dom";
+import Comments from "../components/comments/Comments";
 
 const QuoteDetail = () => {
-  return (
-    <div>QuoteDetail</div>
-  )
-}
+  const params = useParams();
 
-export default QuoteDetail
+  return (
+    <>
+      <h2>Quote Detail Page</h2>
+      <p>{params.quoteID}</p>
+      <Comments />
+    </>
+  );
+};
+
+export default QuoteDetail;

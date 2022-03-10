@@ -1,7 +1,11 @@
 .comments {
   text-align: center;
+  margin: 5% 0;
 }
 
-.comments > button {
-  font-size: 1.25rem;
+@media (max-width: 410px) {
+  .comments h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
 }

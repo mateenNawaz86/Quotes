@@ -1,25 +1,27 @@
-import { useState } from 'react';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-import classes from './Comments.module.css';
-import NewCommentForm from './NewCommentForm';
+import FillBtn from "../UI/FillBtn";
+import { uiActions } from "../../store/ui-slice";
+
+import classes from "./Comments.module.css";
+import NewCommentForm from "./NewCommentForm";
 
 const Comments = () => {
-  const [isAddingComment, setIsAddingComment] = useState(false);
+  const isAddingComment = useSelector((state) => state.ui.isAddingComment);
+  const dispatch = useDispatch();
 
   const startAddCommentHandler = () => {
-    setIsAddingComment(true);
+    dispatch(uiActions.addComment());
   };
-  
+
   return (
     <section className={classes.comments}>
       <h2>User Comments</h2>
       {!isAddingComment && (
-        <button className='btn' onClick={startAddCommentHandler}>
-          Add a Comment
-        </button>
+        <FillBtn onClick={startAddCommentHandler}>Add a Comment</FillBtn>
       )}
       {isAddingComment && <NewCommentForm />}
-      <p>Comments...</p>
     </section>
   );
 };

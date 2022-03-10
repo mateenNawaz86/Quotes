@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "../../store/ui-slice";
 
-const Header = () => {
+const MainNavigation = () => {
   const dispatch = useDispatch();
   const menu = useSelector((state) => state.ui.showMenu);
 
@@ -16,7 +16,10 @@ const Header = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg shadow navbar-dark bg-dark">
+      <nav
+        className="navbar navbar-expand-lg shadow navbar-dark"
+        style={{ backgroundColor: "#20B2AA" }}
+      >
         <div className="container-fluid">
           <Link className="navbar-brand text-primary" to="/">
             MTQ's
@@ -67,4 +70,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default MainNavigation;
