@@ -1,7 +1,12 @@
 import React from "react";
+import QuoteForm from "../components/quotes/QuoteForm";
 
 const AddingQuotes = () => {
-  return <div>AddingQuotes</div>;
+  return (
+    <>
+      <QuoteForm />
+    </>
+  );
 };
 
 export default AddingQuotes;
