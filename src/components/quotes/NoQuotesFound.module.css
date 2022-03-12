@@ -1,12 +1,9 @@
 .noquotes {
-  height: 20rem;
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .noquotes p {
@@ -15,3 +12,14 @@
   font-weight: bold;
 }
 
+@media (max-width: 480px) {
+  .noquotes p {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 330px) {
+  .noquotes p {
+    font-size: 1rem;
+  }
+}

@@ -1,20 +1,54 @@
 .quote {
-  background-color: #162b2b;
+  background-color: #48d1cc;
   color: white;
   border-radius: 6px;
-  padding: 3rem;
-  margin: 3rem auto;
+  padding: 2rem;
+  margin: 5% auto;
   width: 90%;
   max-width: 40rem;
+  user-select: none;
 }
 
 .quote p {
-  font-size: 2.5rem;
+  font-size: 2rem;
+}
+
+.quote p > i {
+  font-size: 1.5rem;
+  color: #c71585;
+}
+
+.quote p i:first-child {
+  margin-right: 4px;
+  position: relative;
+  bottom: 10px;
+}
+
+.quote p i:last-child {
+  margin-left: 4px;
+  position: relative;
+  top: 10px;
 }
 
 .quote figcaption {
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   text-align: right;
-  color: #a1e0e0;
+  color: #6a5acd;
+}
+
+@media (max-width: 560px) {
+  .quote p {
+    font-size: 1.2rem;
+  }
+
+  .quote figcaption {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quote p {
+    font-size: 1rem;
+  }
 }

@@ -21,7 +21,11 @@ const MainNavigation = () => {
         style={{ backgroundColor: "#20B2AA" }}
       >
         <div className="container-fluid">
-          <Link className="navbar-brand text-primary" to="/">
+          <Link
+            className="navbar-brand"
+            to="/"
+            style={{ fontSize: "1.5rem", fontWeight: "700", color: "#800080" }}
+          >
             MTQ's
           </Link>
           <button
@@ -43,9 +47,9 @@ const MainNavigation = () => {
               <li className="nav-item">
                 <Link
                   aria-current="page"
-                  to="/add-quotes"
+                  to="/new-quotes"
                   className={`nav-link ${
-                    location.pathname === "/add-quotes" ? "active" : ""
+                    location.pathname === "/new-quotes" ? "active" : ""
                   }`}
                 >
                   New Quote
@@ -54,9 +58,9 @@ const MainNavigation = () => {
               <li className="nav-item">
                 <Link
                   aria-current="page"
-                  to="/all-quotes"
+                  to="/quotes"
                   className={`nav-link ${
-                    location.pathname === "/all-quotes" ? "active" : ""
+                    location.pathname === "/quotes" ? "active" : ""
                   }`}
                 >
                   All Quotes
