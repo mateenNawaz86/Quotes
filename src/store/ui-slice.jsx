@@ -1,6 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { showMenu: false, isAddingComment: false };
+const initialState = {
+  showMenu: false,
+  isAddingComment: false,
+  isEntering: false,
+};
 
 const uiSlice = createSlice({
   name: "ui",
@@ -12,6 +16,9 @@ const uiSlice = createSlice({
 
     addComment(state) {
       state.isAddingComment = !state.isAddingComment;
+    },
+    setEntering(state) {
+      state.isEntering = !state.isEntering;
     },
   },
 });
