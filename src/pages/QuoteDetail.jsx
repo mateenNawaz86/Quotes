@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes, useParams } from "react-router-dom";
+import { Route, Routes, useParams, Link } from "react-router-dom";
 import Comments from "../components/comments/Comments";
 import HighlightedQuote from "../components/quotes/HighlightedQuote";
 import NoQuotesFound from "../components/quotes/NoQuotesFound";
@@ -29,6 +29,13 @@ const QuoteDetail = () => {
   return (
     <>
       <HighlightedQuote text={quote.text} author={quote.author} />
+
+      <div className="centered">
+        <Link to={`quotes/${params.quoteId}/comments`} className="flatBtn">
+          Load Comments...
+        </Link>
+      </div>
+
       <Routes>
         <Route
           path={`quotes/${params.quoteId}/comments`}

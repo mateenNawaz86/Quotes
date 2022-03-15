@@ -23,3 +23,34 @@ body {
   font-weight: bold;
   color: white;
 }
+
+.flatBtn {
+  padding: 7px 14px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #008080;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  border-bottom: none;
+  text-decoration: none;
+}
+
+.flatBtn:hover {
+  background-color: #008080;
+  color: #fff;
+}
+
+@media (max-width: 450px) {
+  .flatBtn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 326px) {
+  .flatBtn {
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+}
