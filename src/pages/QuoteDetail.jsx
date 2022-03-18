@@ -1,47 +1,46 @@
-import React from "react";
-import { Route, Routes, useParams, Link } from "react-router-dom";
-import Comments from "../components/comments/Comments";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import HighlightedQuote from "../components/quotes/HighlightedQuote";
 import NoQuotesFound from "../components/quotes/NoQuotesFound";
+import LoadingSpinner from "../components/UI/LoadingSpinner";
 
-const DUMMY_QUOTES = [
-  {
-    id: "q1",
-    author: "Mateen",
-    text: "Never give up!",
-  },
-  {
-    id: "q2",
-    author: "Arslan",
-    text: "Today is hard, tomorrow will be worst but the day after tomorrow will be shine!",
-  },
-];
+import useHttp from "../hooks/use-http";
+import { getSingleQuote } from "../lib/api";
 
 const QuoteDetail = () => {
+  const {
+    sendRequest,
+    status,
+    data: loadedQuote,
+    error,
+  } = useHttp(getSingleQuote, true);
+
   const params = useParams();
+  const { quoteId } = params;
 
-  const quote = DUMMY_QUOTES.find((quote) => quote.id === params.quoteId);
+  useEffect(() => {
+    sendRequest(quoteId);
+  }, [sendRequest, quoteId]);
 
-  if (!quote) {
+  if (status === "pending") {
+    return (
+      <div className="centered">
+        <LoadingSpinner />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <p>Not quotes found!</p>;
+  }
+
+  if (!loadedQuote.text) {
     return <NoQuotesFound />;
   }
 
   return (
     <>
-      <HighlightedQuote text={quote.text} author={quote.author} />
-
-      <div className="centered">
-        <Link to={`quotes/${params.quoteId}/comments`} className="flatBtn">
-          Load Comments...
-        </Link>
-      </div>
-
-      <Routes>
-        <Route
-          path={`quotes/${params.quoteId}/comments`}
-          element={<Comments />}
-        />
-      </Routes>
+      <HighlightedQuote text={loadedQuote.text} author={loadedQuote.author} />
     </>
   );
 };

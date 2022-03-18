@@ -26,7 +26,7 @@ const MainNavigation = () => {
             to="/"
             style={{ fontSize: "1.5rem", fontWeight: "700", color: "#800080" }}
           >
-            MTQ's
+            Q's
           </Link>
           <button
             className="navbar-toggler"
